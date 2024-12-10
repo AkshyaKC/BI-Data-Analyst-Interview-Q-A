@@ -1,2 +1,2 @@
-# BI-Data-Analyst-Interview-Q-A
-This repository features a comprehensive collection of Data Analyst and Business Intelligence Analyst interview questions, along with detailed solutions tailored to various companies.
+# Data & Business Intelligence Analyst Interview Questions and Answers
+This repository features a comprehensive collection of Data Analyst and Business Intelligence Analyst interview questions, along with detailed solutions tailored to various companies. The questions have been sourced from LinkedIn posts shared by experienced Data Analyst mentors and industry experts, and the solutions have been thoughtfully curated by me.
