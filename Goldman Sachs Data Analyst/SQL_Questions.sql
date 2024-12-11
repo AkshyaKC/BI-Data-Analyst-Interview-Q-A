@@ -1,0 +1,5 @@
+-- 1. Calculate the average salary for each department from the table.
+-- 2. Write a SQL query to display the employee’s name along with their manager’s name using a self-join on the ‘employees’ table, 
+--    which contains ‘emp_id’, ‘name’, and ‘manager_id’ columns.
+-- 3. Find the most recent hire for each department (solved using LEAD/LAG functions).
+-- 4. Write a query to retrieve the nth highest salary from the Employees table, which has ‘EmployeeID’, ‘Name’, and ‘Salary’ columns.

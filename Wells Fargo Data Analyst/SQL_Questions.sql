@@ -1,0 +1,8 @@
+-- 1. You have a table Accounts with columns AccountID, CustomerID, Balance, and LastTransactionDate. Write a query to identify 
+--    accounts that have been inactive for more than 12 months.
+-- 2. Given a table Transactions with columns TransactionID, AccountID, Amount, and TransactionDate, find the top 3 accounts 
+--    with the highest total transaction volume for each month.
+-- 3. A table LoanApplications contains columns ApplicationID, CustomerID, LoanAmount, ApprovalStatus, and ApplicationDate.
+--    Write a query to calculate the average loan amount for approved applications submitted in the last six months.
+-- 4. Explain how a clustered index works and how it differs from a non-clustered index.
+-- 5. Describe a scenario where you would use a self-join in SQL and explain its benefits.
