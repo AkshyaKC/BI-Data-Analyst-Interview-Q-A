@@ -1,0 +1,20 @@
+[
+    {
+        "customer_id":1,
+        "customer_name":"shree",
+        "date_of_birth":"2024-11-12",
+        "is_active":true
+    },
+    {
+        "customer_id":2,
+        "customer_name":"virat",
+        "date_of_birth":"2024-02-27",
+        "is_active":true
+    },
+    {
+        "customer_id":3,
+        "customer_name":"riya",
+        "date_of_birth":"2022-03-01",
+        "is_active":false
+    }
+]
