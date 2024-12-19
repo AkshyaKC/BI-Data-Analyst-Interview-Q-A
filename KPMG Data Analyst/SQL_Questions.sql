@@ -24,6 +24,46 @@ GROUP BY region
 ORDER BY 2 DESC;
 -- 2. Display the names of employees earning a salary higher than the average salary in their department.
 ;
+CREATE TABLE employee_salary(
+    empID INT,
+    empName VARCHAR(50),
+    salary DECIMAL(10, 2),
+    department VARCHAR(50)
+);
+INSERT INTO employee_salary ()
+VALUES (1, 'John Doe', 60000.00, 'Finance'),
+    (2, 'Jane Smith', 70000.00, 'IT'),
+    (3, 'Michael Brown', 55000.00, 'Admin'),
+    (4, 'Emily Davis', 62000.00, 'Finance'),
+    (5, 'William Johnson', 75000.00, 'IT'),
+    (6, 'Jessica Taylor', 50000.00, 'Admin'),
+    (7, 'David Wilson', 58000.00, 'Finance'),
+    (8, 'Sarah Thomas', 68000.00, 'IT'),
+    (9, 'Christopher Harris', 52000.00, 'Admin'),
+    (10, 'Laura Martinez', 64000.00, 'Finance'),
+    (11, 'Daniel Moore', 77000.00, 'IT'),
+    (12, 'Sophia Jackson', 51000.00, 'Admin'),
+    (13, 'James White', 59000.00, 'Finance'),
+    (14, 'Olivia Martin', 73000.00, 'IT'),
+    (15, 'Anthony Anderson', 53000.00, 'Admin'),
+    (16, 'Emma Thompson', 61000.00, 'Finance'),
+    (17, 'Matthew Clark', 72000.00, 'IT'),
+    (18, 'Isabella Lewis', 54000.00, 'Admin'),
+    (19, 'Ethan Hall', 63000.00, 'Finance'),
+    (20, 'Mia Young', 76000.00, 'IT');
+WITH Dept_Average AS(
+    SELECT empName,
+        salary,
+        department,
+        AVG(salary) OVER(PARTITION BY department) AS DepartmentAvgSalary
+    FROM employee_salary
+)
+SELECT empName,
+    salary,
+    department,
+    DepartmentAvgSalary
+FROM Dept_Average
+WHERE salary > DepartmentAvgSalary;
 -- 3. Identify the second - highest salary in each department from the ‘ employees ’ table, which contains ‘ emp_id,’ ‘ department_id,’
 --    and ‘ salary ’ columns.
 ;
