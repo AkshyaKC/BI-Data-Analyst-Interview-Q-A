@@ -82,3 +82,33 @@ FROM salary_rank_by_dept
 WHERE SalaryRank = 2;
 -- 4. Write a SQL query to find employees who haven ’ t made any recent sales in the last 3 months.
 ;
+CREATE TABLE sales_data(
+    empName VARCHAR(20),
+    saleQuantity INT,
+    saleDate DATE
+);
+INSERT INTO sales_data()
+VALUES ('Jane Smith', 8, '2022-11-25'),
+    ('Emily Davis', 4, '2022-11-30'),
+    ('Michael Brown', 1, '2022-12-01'),
+    ('John Doe', 5, '2023-02-15'),
+    ('Emily Davis', 2, '2023-03-10'),
+    ('Jane Smith', 4, '2023-03-12'),
+    ('Michael Brown', 3, '2023-04-08'),
+    ('Michael Brown', 5, '2023-05-25'),
+    ('Emily Davis', 3, '2023-06-01'),
+    ('John Doe', 3, '2023-06-10'),
+    ('Michael Brown', 7, '2023-07-15'),
+    ('Jane Smith', 2, '2024-09-28'),
+    ('John Doe', 6, '2024-09-28'),
+    ('Jane Smith', 6, '2024-10-01'),
+    ('John Doe', 7, '2024-10-02');
+WITH latest_sale AS(
+    SELECT empName,
+        MAX(saleDate) AS LatestSaleOn
+    FROM sales_data
+    GROUP BY empName
+)
+SELECT *
+FROM latest_sale
+WHERE LatestSaleOn > CURRENT_DATE - INTERVAL 3 MONTH;
