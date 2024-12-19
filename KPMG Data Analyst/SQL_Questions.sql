@@ -67,5 +67,18 @@ WHERE salary > DepartmentAvgSalary;
 -- 3. Identify the second - highest salary in each department from the ‘ employees ’ table, which contains ‘ emp_id,’ ‘ department_id,’
 --    and ‘ salary ’ columns.
 ;
+WITH salary_rank_by_dept AS(
+    SELECT department,
+        salary,
+        ROW_NUMBER() OVER(
+            PARTITION BY department
+            ORDER BY salary desc
+        ) AS SalaryRank
+    FROM employee_salary
+)
+SELECT department,
+    salary AS SecondHighestSalary
+FROM salary_rank_by_dept
+WHERE SalaryRank = 2;
 -- 4. Write a SQL query to find employees who haven ’ t made any recent sales in the last 3 months.
 ;
