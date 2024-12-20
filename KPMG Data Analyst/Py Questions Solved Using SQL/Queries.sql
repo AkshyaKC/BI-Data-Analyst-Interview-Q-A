@@ -23,6 +23,7 @@ purchase_filter AS(
 SELECT *
 FROM purchase_filter
 WHERE TotalPurchase > 5;
--- Develop a program to read a CSV file, extract unique values from a column, and save the results
--- in a new file.
+-- extract unique values from a column.
 ;
+SELECT DISTINCT customerName
+FROM electronic_sales;
