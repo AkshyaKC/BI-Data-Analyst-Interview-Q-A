@@ -1,5 +1,5 @@
 1. Combine two tables: https://lnkd.in/dumdCXC7
-   _[Go to Solution](./Solutions/Question1.sql)_
+   _[Solution](./Solutions/Question1.sql)_
 
 2. Employees earning > managers: https://Inkd.in/dKqcFmzY
    _[Solution](./Solutions/Question2.sql)_
