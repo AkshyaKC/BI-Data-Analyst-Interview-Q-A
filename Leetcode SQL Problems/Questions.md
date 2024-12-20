@@ -4,7 +4,7 @@
 2. Employees earning > managers: https://Inkd.in/dKqcFmzY
    _[Solution](./Solutions/Question2.sql)_
 
-3. Duplicate emails: https://lnkd.in/dJSYfs89
+3. Duplicate emails: https://leetcode.com/problems/duplicate-emails/description/
    _[Solution](./Solutions/Question3.sql)_
 
 4. Customers who never order : https://lnkd.in/dPZPAKFf
