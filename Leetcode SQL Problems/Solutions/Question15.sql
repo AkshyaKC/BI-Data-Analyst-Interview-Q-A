@@ -1,1 +1,0 @@
--- SQL Script for Question 15
