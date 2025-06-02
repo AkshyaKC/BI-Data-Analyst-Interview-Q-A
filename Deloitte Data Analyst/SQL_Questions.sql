@@ -1,14 +1,5 @@
--- 1. Write a SQL query to find the third highest salary from an employee table with the following columns: EID, ESalary.
-;
-CREATE TABLE salary_table(EID INT NOT NULL, ESalary INT);
-INSERT INTO salary_table()
-VALUES (101, 102000),
-    (102, 98000),
-    (103, 105000),
-    (104, 100000),
-    (105, 107000),
-    (106, 85000),
-    (107, 90000);
+-- 1. Write a SQL query to find the third highest salary from an employee table with the following columns: EID, ESalary.--
+
 WITH salary_cte AS(
     SELECT EID,
         ESalary,
@@ -23,8 +14,7 @@ FROM salary_cte
 WHERE RowNumber = 3;
 --------------------------------------------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------------------
--- 2. Create a SQL procedure using ESalary as a parameter that selects all EIDs from the Employee table where ESalary is less than 50,000.
-;
+-- 2. Create a SQL procedure using ESalary as a parameter that selects all EIDs from the Employee table where ESalary is less than 50,000.--
 CREATE PROCEDURE salary_below(salary_param INT)
 SELECT EID
 FROM employee_table
