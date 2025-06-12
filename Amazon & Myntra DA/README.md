@@ -24,3 +24,22 @@ CTC= 29 LPA
 20/ How do you ensure data quality and consistency in a large data warehouse like Redshift or BigQuery?
 
 These questions target advanced problem-solving and optimization skills, preparing you for challenging Data Analyst interview scenarios.
+
+
+
+
+
+
+
+
+Question:
+You're given a table containing data on Amazon customers and their spending on products in different category, write a query to identify the top two highest-grossing products within each category in the year 2022. The output should include the category, product, and total spend.
+
+📊 Table: product_spend 
+
+✅ Columns: 
+1️⃣ Category :: Varchar
+2️⃣ Product :: Varchar
+3️⃣ User_id :: Int
+4️⃣ Spend :: Int
+5️⃣ Transaction_date :: date
