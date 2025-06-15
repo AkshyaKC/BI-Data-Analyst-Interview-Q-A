@@ -69,32 +69,3 @@ GROUP BY v.listing_id
 ORDER BY CTR DESC;
 
 
--- 4. Average Vacant Days in 2021 for Active Listings --
-WITH adjusted_bookings AS (
-    SELECT 
-        listing_id,
-        GREATEST(DATE '2021-01-01', checkin_date) AS start_date,
-        LEAST(DATE '2021-12-31', checkout_date) AS end_date
-    FROM bookings
-    WHERE checkout_date >= '2021-01-01' AND checkin_date <= '2021-12-31'
-),
-booked_days_per_listing AS (
-    SELECT 
-        listing_id,
-        SUM(DATEDIFF(start_date, end_date)) AS booked_days
-    FROM adjusted_bookings
-    GROUP BY listing_id
-),
-active_listings_2021 AS (
-    SELECT 
-        l.listing_id,
-        COALESCE(b.booked_days, 0) AS booked_days,
-        365 - COALESCE(b.booked_days, 0) AS vacant_days
-    FROM listings l
-    LEFT JOIN booked_days_per_listing b 
-        ON l.listing_id = b.listing_id
-    WHERE l.is_active = 1
-)
-SELECT 
-    ROUND(AVG(vacant_days)) AS avg_vacant_days_2021
-FROM active_listings_2021;
