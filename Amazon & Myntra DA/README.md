@@ -2,7 +2,7 @@ Amazon & Myntra Interview Experience. (Expeience= 2+ years)
 CTC= 29 LPA
 
 1/ Write a query to find the top 3 best-selling products in the last 30 days.
- (Focus on joins, GROUP BY, ORDER BY, and LIMIT)
+(Focus on joins, GROUP BY, ORDER BY, and LIMIT)
 2/ How would you write a query to get users who purchased more than 3 times in a week?
 3/ Given a table with user purchases, identify returning customers vs. one-time buyers.
 4/ Find the cumulative revenue per day for the last 7 days.
@@ -25,19 +25,12 @@ CTC= 29 LPA
 
 These questions target advanced problem-solving and optimization skills, preparing you for challenging Data Analyst interview scenarios.
 
-
-
-
-
-
-
-
 Question:
 You're given a table containing data on Amazon customers and their spending on products in different category, write a query to identify the top two highest-grossing products within each category in the year 2022. The output should include the category, product, and total spend.
 
-📊 Table: product_spend 
+📊 Table: product_spend
 
-✅ Columns: 
+✅ Columns:
 1️⃣ Category :: Varchar
 2️⃣ Product :: Varchar
 3️⃣ User_id :: Int
