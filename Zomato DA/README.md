@@ -1,13 +1,13 @@
-Zomato asked these 3 questions in its 2nd round. ( Experience= 2+ years) 
+Zomato asked these 3 questions in its 2nd round. ( Experience= 2+ years)  
 CTC=22 LPA
 
 Question 1: Analyze Customer Behavior on Zomato  
-I was Given a database of Zomato customer behavior (orders and reviews), write a query to filter out customer records that meet the following conditions:
--Customers who have ordered more than 5 times in the last month
--Have given at least one 1-star review
--Their most ordered food item is 'Pizza'.
+I was Given a database of Zomato customer behavior (orders and reviews), write a query to filter out customer records that meet the following conditions:  
+- Customers who have ordered more than 5 times in the last month
+- Have given at least one 1-star review
+- Their most ordered food item is 'Pizza'.
 
- What They're Testing:
+What They're Testing:
 
 1. SQL Proficiency 
 2. Logical Thinking 
