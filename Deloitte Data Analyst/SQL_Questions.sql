@@ -1,5 +1,4 @@
 -- 1. Write a SQL query to find the third highest salary from an employee table with the following columns: EID, ESalary.--
-
 WITH salary_cte AS(
     SELECT EID,
         ESalary,
