@@ -91,16 +91,25 @@ ORDER BY MONTH(review_date),
 ----------------------------------------------------------------------------------------------------
 -- Question 4: Filter Netflix Users Based on Viewing History and Subscription Status 
 -- Question: You are given a database of Netflix ’ s user viewing history and their current subscription status.
---           Write a SQL query to find all active customers who watched more than 10 episodes of a show called “ Stranger Things ” in the last 30 days.
+--           Write a SQL query to find all active customers who watched more than 4 episodes of a show called “ Stranger Things ” in the last 30 days.
 --Tables: 
 -- users table: user_id (integer), active (boolean) 
 -- viewing_history table: user_id (integer),show_id (integer),episode_id (integer),watch_date (date) 
 -- shows table: show_id (integer),show_name (text)
+SELECT u.user_id
+FROM users u
+    JOIN viewing_history vh ON u.user_id = vh.user_id
+    JOIN shows s ON vh.show_id = s.show_id
+WHERE u.active = TRUE
+    AND s.show_name = 'Stranger Things'
+    AND vh.watch_date >= CURDATE() - INTERVAL 30 DAY
+GROUP BY u.user_id
+HAVING COUNT(DISTINCT vh.episode_id) > 4;
 -----------------------------------------------------------------------------------------------------------
 -- Question 5: What does it mean to denormalize a database ? 
 -- Question: Explain the conceptand implications of denormalizing a database.
 ---------------------------------------------------------------------------------------------------------
--- Question 6: Filter and Match Customer ’ s Viewing Records 
+-- Question 6: Filter and Match Customer’s Viewing Records 
 -- Question: As a data analyst at Netflix, you are asked to analyze the customer ’ s viewing records.
 --           You confirmed that Netflix is especially interested in customers who have been continuously watching a particular 
 --           genre - ‘ Documentary ’ over the last month.The task is to find the name and email of those customers who have viewed 
@@ -109,3 +118,12 @@ ORDER BY MONTH(review_date),
 -- Tables: 
 -- movies table: movie_id (integer), title (text), genre (text), release_year (integer) 
 -- customer table: user_id (integer), name (text), email (text), last_movie_watched (integer), date_watched (date)
+SELECT c.name,
+    c.email
+FROM customer c
+    JOIN movies m ON c.last_movie_watched = m.movie_id
+WHERE m.genre LIKE '%Documentary%'
+    AND c.date_watched >= CURRENT_DATE - INTERVAL 1 MONTH
+GROUP BY c.name,
+    c.email
+HAVING COUNT(*) > 5;
