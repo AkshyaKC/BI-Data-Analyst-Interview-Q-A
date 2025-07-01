@@ -6,6 +6,7 @@
 -- users table: user_id (integer), sign_up_date (date), subscription_type (text) 
 -- watching_activity table: activity_id (integer), user_id (integer), date_time (timestamp), show_id (integer), hours_watched (float) 
 ;
+DROP TABLE IF EXISTS users;
 CREATE TABLE users(
     user_id INT,
     sign_up_date DATE,
@@ -17,6 +18,8 @@ VALUES (1, "2024-12-01", "standard"),
     (3, "2020-09-23", "premium"),
     (4, "2021-06-18", "premium"),
     (5, "2019-02-11", "standard");
+    
+DROP TABLE IF EXISTS watching_activity;
 CREATE TABLE watching_activity(
     activity_id INT,
     user_id INT,

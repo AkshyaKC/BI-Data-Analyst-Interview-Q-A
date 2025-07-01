@@ -25,7 +25,7 @@ ORDER BY avg_guests DESC;
 WITH views_table AS (
 	SELECT listing_id,
 		COUNT(listing_id) AS views
-	FROM sql_interview.listing_views
+	FROM listing_views
 	GROUP BY listing_id
 ),
 booking_table AS(
